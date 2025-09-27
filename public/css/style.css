@@ -40,11 +40,24 @@ body {
 .bio{
     font-weight: 300px;
 }
-.btn-glass {
-    background: rgba(red, green, blue, alpha);
-    border: 1px solid rgba(red, green, blue, alpha);
+.btn-glass{
+    background: rgba(225, 225, 225, 0.15);
+    border: 1px solid rgba(225, 225, 225, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-weight: 700px;
+}
+.btn-glass:hover {
+    background: rgba(225, 225, 225, 0.15);
+    border: 1px solid rgba(225, 225, 225, 0.2);
     backdrop-filter: blur(10px);
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(red, green, blue, alpha);
+    box-shadow: 8px 15px rgba(225, 225, 225, 0.15);
+}
+.social-icons a{
+    color : white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    opacity: 0.8;
 }
