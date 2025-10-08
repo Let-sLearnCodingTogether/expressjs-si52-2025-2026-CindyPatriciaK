@@ -4,7 +4,7 @@ export const database = async () => {
     try {
         console.log("Starting connection to mongodb...");
 
-        const response = await mongoose.connect("mongodb://127.0.0.1:27017/Cindy?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.8")
+        const response = await mongoose.connect("mongodb+srv://cindypatriciakadir2327240008_db_user:babigilo@cluster0.jmhtoku.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
         console.log (`Connected successfully to mongodb at : ${response.connection.host}`);
 
