@@ -45,7 +45,7 @@ data:null
 })
 }
 //membandingkan password yang ada didalam db dengan request
-if(user.password==loginData.password){
+if(compare(loginData.password, user.password==loginData.password)){
 res.status(200).json({
 message : "Login Berhasil",
 data : {
