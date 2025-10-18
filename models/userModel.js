@@ -1,7 +1,6 @@
 import mongoose, { trusted } from "mongoose";
 
 const userSchema = new mongoose.Schema(
-    {},
     {
         username : {
             type : String,
@@ -25,6 +24,6 @@ const userSchema = new mongoose.Schema(
         }
 )
 
-const UserModel = mongoose.model("User", userSchema)
+const UserModel = mongoose.model("User12", userSchema)
 
 export default UserModel 

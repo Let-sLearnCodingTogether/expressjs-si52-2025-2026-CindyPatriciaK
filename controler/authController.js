@@ -1,5 +1,6 @@
 import UserModel from "../models/userModel.js";
-
+import { jwtSignUtil } from "../utils/jwtSignUtil.js";
+import {compare, hash} from "../utils/hashUtil.js";
 
 export const register = async (req, res) => {
     try {
@@ -8,12 +9,12 @@ export const register = async (req, res) => {
 
         console.log(registerData);
 
-        console.hashPassword = hash(registerData.password)
+        const hashPassword = hash(registerData.password)
 
         await UserModel.create({
             username: registerData.username,
             email: registerData.email,
-            password: registerData.password
+            password: hashPassword
         })
 
         res.status(201).json({
@@ -45,13 +46,13 @@ export const login = async (req, res) => {
             })
         }
         //membandingkan password yang ada didalam db dengan request
-        if (compare(loginData.password, user.password == loginData.password)) {
+        if (compare(loginData.password, user.password)) {
             res.status(200).json({
                 message: "Login Berhasil",
                 data: {
                     username: user.username,
                     email: user.email,
-                    token: "TOKEN"
+                    token: jwtSignUtil(user)// melakukan sign in  jwt token 
                 }
             })
             return res.status(401).json({
@@ -61,7 +62,7 @@ export const login = async (req, res) => {
         }
     } catch (error) {
         res.status(500).json({
-            message: error,
+            message: error.message,
             data: null
         })
     }
