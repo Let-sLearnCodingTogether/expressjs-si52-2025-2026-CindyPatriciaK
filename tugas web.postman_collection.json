@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "83caaddd-17e2-4168-88e1-ffd9fe33830c",
+		"name": "tugas web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49014540",
+		"_collection_link": "https://cindypatriciak-3015394.postman.co/workspace/cindypatriciak's-Workspace~25386415-7deb-4f60-81a6-1d10bd1129a4/collection/49014540-83caaddd-17e2-4168-88e1-ffd9fe33830c?action=share&source=collection_link&creator=49014540"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"abc\",\r\n    \"email\": \"haiabc@gmaol\",\r\n    \"password\": \"bca\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "regis",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"username\" : \"pigfly\", \r\n            \"email\" : \"pigfly@gmaol\",\r\n            \"password\" : \"luv piggy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
